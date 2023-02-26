@@ -6,8 +6,15 @@ const app = express();
 dotenv.config({path:'./config.env'});
 // importing connectionDB file
 require('./db/connectionDB');
+// specifing the format of the content
+app.use(express.json());
+
+
 // importing User schema 
 const User = require('./model/userSchema');
+
+// linking the router files 
+app.use(require('./router/auth'));
 
 const PORT = process.env.PORT;
 
