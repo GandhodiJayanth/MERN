@@ -46,3 +46,9 @@ mongodb+srv://gandhodijayanth:<password>@jayanthmern.zbwqt6o.mongodb.net/?retryW
    useUnifiedTopology: true,
    useFindAndModify: false
 }
+
+
+----What is Schema....
+-It defines the sturcture of the document....
+Ex- name     -  String
+    mobileNo -  number

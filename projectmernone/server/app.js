@@ -4,14 +4,12 @@ const express = require('express');
 const app = express();
 
 dotenv.config({path:'./config.env'});
+// importing connectionDB file
+require('./db/connectionDB');
+// importing User schema 
+const User = require('./model/userSchema');
 
-const DB = process.env.DATABASE;
-
-mongoose.set("strictQuery", false);
-mongoose.connect(DB).then(() => {
-   console.log('Mongoose Connection Successfully Done...');
-}).catch((error) => console.log('Error due to -', error));
-
+const PORT = process.env.PORT;
 
 //Middleware...
 
@@ -44,6 +42,6 @@ app.get('/about', middlewareone,  (req,res) => {
  });
 
 
-app.listen(3000, () => {
-    console.log('Server is runnong at port 3000');
+app.listen(PORT, () => {
+    console.log(`Server is running at port - ${PORT}`);
 })
